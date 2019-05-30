@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>yywzt</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yywzt.github.io/"/>
+  <updated>2019-05-30T17:34:27.878Z</updated>
+  <id>http://yywzt.github.io/</id>
+  
+  <author>
+    <name>yywzt</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yywzt.github.io/2019/05/30/hello-world/"/>
+    <id>http://yywzt.github.io/2019/05/30/hello-world/</id>
+    <published>2019-05-30T03:28:15.122Z</published>
+    <updated>2019-05-30T17:34:27.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="http://yywzt.github.io/2018/08/16/docker/"/>
+    <id>http://yywzt.github.io/2018/08/16/docker/</id>
+    <published>2018-08-16T07:57:58.000Z</published>
+    <updated>2019-05-29T14:57:41.016Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装Docker&quot;&gt;&lt;a href=&quot;#安装Docker&quot; class=&quot;headerlink&quot; title=&quot;安装Docker&quot;&gt;&lt;/a&gt;安装Docker&lt;/h2&gt;&lt;h4 id=&quot;安装linux虚拟机&quot;&gt;&lt;a href=&quot;#安装linux虚拟机&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ消息队列</title>
+    <link href="http://yywzt.github.io/2018/08/10/rabbitmq/"/>
+    <id>http://yywzt.github.io/2018/08/10/rabbitmq/</id>
+    <published>2018-08-10T05:41:36.000Z</published>
+    <updated>2018-08-10T06:15:38.625Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;RabbitMQ 即一个消息队列，主要是用来实现应用程序的异步和解耦，同时也能起到消息缓冲，消息分发的作用。
+        
+      
+    
+    </summary>
+    
+      <category term="MQ" scheme="http://yywzt.github.io/categories/MQ/"/>
+    
+    
+      <category term="RabbitMQ" scheme="http://yywzt.github.io/tags/RabbitMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA配置热部署</title>
+    <link href="http://yywzt.github.io/2018/08/09/idea-pei-zhi-re-bu-shu/"/>
+    <id>http://yywzt.github.io/2018/08/09/idea-pei-zhi-re-bu-shu/</id>
+    <published>2018-08-09T06:08:36.000Z</published>
+    <updated>2018-08-10T06:23:25.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;IDEA配置热部署&quot;&gt;&lt;a href=&quot;#IDEA配置热部署&quot; class=&quot;headerlink&quot; title=&quot;IDEA配置热部署&quot;&gt;&lt;/a&gt;IDEA配置热部署&lt;/h2&gt;&lt;h3 id=&quot;Spring-Boot-Devtools（推荐）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://yywzt.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="IDEA" scheme="http://yywzt.github.io/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>quartz调度器的misfire规则</title>
+    <link href="http://yywzt.github.io/2018/08/07/quartz-diao-du-qi-de-misfire-gui-ze/"/>
+    <id>http://yywzt.github.io/2018/08/07/quartz-diao-du-qi-de-misfire-gui-ze/</id>
+    <published>2018-08-07T06:13:36.000Z</published>
+    <updated>2018-08-10T06:24:33.018Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;调度-scheduleJob-或恢复调度-resumeTrigger-resumeJob-后不同的misfire对应的处理规则&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="定时任务调度" scheme="http://yywzt.github.io/categories/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/"/>
+    
+    
+      <category term="quartz" scheme="http://yywzt.github.io/tags/quartz/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven基本使用</title>
+    <link href="http://yywzt.github.io/2018/08/06/maven-ji-ben-shi-yong/"/>
+    <id>http://yywzt.github.io/2018/08/06/maven-ji-ben-shi-yong/</id>
+    <published>2018-08-06T03:35:36.000Z</published>
+    <updated>2018-08-15T02:17:48.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Dependency-Scope&quot;&gt;&lt;a href=&quot;#Dependency-Scope&quot; class=&quot;headerlink&quot; title=&quot;Dependency Scope&quot;&gt;&lt;/a&gt;Dependency Scope&lt;/h3&gt;&lt;p&gt; 
+        
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://yywzt.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="maven" scheme="http://yywzt.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot整合</title>
+    <link href="http://yywzt.github.io/2018/08/02/springboot-zheng-he/"/>
+    <id>http://yywzt.github.io/2018/08/02/springboot-zheng-he/</id>
+    <published>2018-08-02T03:55:03.000Z</published>
+    <updated>2019-05-30T17:48:14.472Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;springboot配置Druid&quot;&gt;&lt;a href=&quot;#springboot配置Druid&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yywzt.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot自定义Start</title>
+    <link href="http://yywzt.github.io/2018/07/09/springboot-zi-ding-yi-start/"/>
+    <id>http://yywzt.github.io/2018/07/09/springboot-zi-ding-yi-start/</id>
+    <published>2018-07-09T13:46:03.000Z</published>
+    <updated>2018-07-09T13:46:41.235Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;自定义starter&quot;&gt;&lt;a href=&quot;#自定义starter&quot; class=&quot;headerlink&quot; title=&quot;自定义starter&quot;&gt;&lt;/a&gt;自定义starter&lt;/h2&gt;&lt;p&gt;starter：&lt;/p&gt;
+&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yywzt.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot之国际化配置</title>
+    <link href="http://yywzt.github.io/2018/07/09/springboot-zhi-guo-ji-hua-pei-zhi/"/>
+    <id>http://yywzt.github.io/2018/07/09/springboot-zhi-guo-ji-hua-pei-zhi/</id>
+    <published>2018-07-09T03:46:03.000Z</published>
+    <updated>2018-07-09T13:46:56.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;国际化&quot;&gt;&lt;a href=&quot;#国际化&quot; class=&quot;headerlink&quot; title=&quot;国际化&quot;&gt;&lt;/a&gt;国际化&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;编写国际化配置文件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yywzt.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SimpleDateFormat线程安全问题</title>
+    <link href="http://yywzt.github.io/2018/06/27/simpledateformat-xian-cheng-an-quan-wen-ti/"/>
+    <id>http://yywzt.github.io/2018/06/27/simpledateformat-xian-cheng-an-quan-wen-ti/</id>
+    <published>2018-06-27T15:23:41.000Z</published>
+    <updated>2018-06-27T15:48:09.680Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-SimpleDateFormat-是线程非安全的&quot;&gt;&lt;a href=&quot;#1-SimpleDateFormat-是线程非安全的&quot; class=&quot;headerlink&quot; title=&quot;1.SimpleDateFormat
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="java" scheme="http://yywzt.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot配置WebSocket</title>
+    <link href="http://yywzt.github.io/2018/06/23/springboot-pei-zhi-websocket/"/>
+    <id>http://yywzt.github.io/2018/06/23/springboot-pei-zhi-websocket/</id>
+    <published>2018-06-23T03:55:03.000Z</published>
+    <updated>2018-07-09T15:27:21.808Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;配置WebSocket实现简易聊天室&quot;&gt;&lt;a href=&quot;#配置WebSocket实现简易聊天室&quot; class=&quot;headerlink&quot; title=&quot;配置WebSocket实现简易聊天室&quot;&gt;&lt;/a&gt;配置WebSocket实现简易聊天室&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://yywzt.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySql中truncate()与format的区别</title>
+    <link href="http://yywzt.github.io/2018/06/23/mysql/"/>
+    <id>http://yywzt.github.io/2018/06/23/mysql/</id>
+    <published>2018-06-23T03:54:36.000Z</published>
+    <updated>2018-07-16T11:48:53.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;mysql中-truncate-和-format-保留小数位数的区别&quot;&gt;&lt;a href=&quot;#mysql中-truncate-和-format-保留小数位数的区别&quot; class=&quot;headerlink&quot; title=&quot;mysql中 truncate() 和
+        
+      
+    
+    </summary>
+    
+      <category term="Sql" scheme="http://yywzt.github.io/categories/Sql/"/>
+    
+    
+      <category term="MySql" scheme="http://yywzt.github.io/tags/MySql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB</title>
+    <link href="http://yywzt.github.io/2018/06/23/mongodb/"/>
+    <id>http://yywzt.github.io/2018/06/23/mongodb/</id>
+    <published>2018-06-23T03:54:36.000Z</published>
+    <updated>2018-08-13T06:22:37.748Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;安装并配置MongoDB&quot;&gt;&lt;a href=&quot;#安装并配置MongoDB&quot; class=&quot;headerlink&quot; title=&quot;安装并配置MongoDB&quot;&gt;&lt;/a&gt;安装并配置MongoDB&lt;/h1&gt;&lt;h3 id=&quot;创建管理员账户并赋予权限&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="NoSql" scheme="http://yywzt.github.io/categories/NoSql/"/>
+    
+    
+      <category term="MongoDB" scheme="http://yywzt.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis</title>
+    <link href="http://yywzt.github.io/2018/06/23/redis/"/>
+    <id>http://yywzt.github.io/2018/06/23/redis/</id>
+    <published>2018-06-23T03:54:06.000Z</published>
+    <updated>2018-06-23T05:02:21.153Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1-Redis-数据结构简介&quot;&gt;&lt;a href=&quot;#1-Redis-数据结构简介&quot; class=&quot;headerlink&quot; title=&quot;1.Redis 数据结构简介&quot;&gt;&lt;/a&gt;&lt;strong&gt;1.Redis
+        
+      
+    
+    </summary>
+    
+      <category term="cache，NoSql" scheme="http://yywzt.github.io/categories/cache%EF%BC%8CNoSql/"/>
+    
+    
+      <category term="Redis" scheme="http://yywzt.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础知识</title>
+    <link href="http://yywzt.github.io/2018/06/23/java-ji-chu-zhi-shi/"/>
+    <id>http://yywzt.github.io/2018/06/23/java-ji-chu-zhi-shi/</id>
+    <published>2018-06-23T03:53:58.000Z</published>
+    <updated>2018-06-23T05:56:35.875Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1-JDK、JRE、JVM&quot;&gt;&lt;a href=&quot;#1-JDK、JRE、JVM&quot; class=&quot;headerlink&quot; title=&quot;1. JDK、JRE、JVM&quot;&gt;&lt;/a&gt;&lt;strong&gt;1. JDK、JRE、JVM&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;① 
+        
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://yywzt.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="java" scheme="http://yywzt.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC</title>
+    <link href="http://yywzt.github.io/2018/06/23/springmvc/"/>
+    <id>http://yywzt.github.io/2018/06/23/springmvc/</id>
+    <published>2018-06-23T03:53:28.000Z</published>
+    <updated>2018-06-23T05:03:05.966Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-HiddenHttpMethodFilter、HttpPutFormContentFilter&quot;&gt;&lt;a href=&quot;#1-HiddenHttpMethodFilter、HttpPutFormContentFilter&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SpringMVC" scheme="http://yywzt.github.io/tags/SpringMVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring</title>
+    <link href="http://yywzt.github.io/2018/06/23/spring/"/>
+    <id>http://yywzt.github.io/2018/06/23/spring/</id>
+    <published>2018-06-23T03:53:11.000Z</published>
+    <updated>2018-06-23T05:02:40.186Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-基于xml配置事务&quot;&gt;&lt;a href=&quot;#1-基于xml配置事务&quot; class=&quot;headerlink&quot; title=&quot;1.基于xml配置事务&quot;&gt;&lt;/a&gt;1.基于xml配置事务&lt;/h2&gt;&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yywzt.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Spring" scheme="http://yywzt.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse项目上传至码云</title>
+    <link href="http://yywzt.github.io/2018/06/22/eclipse-xiang-mu-shang-chuan-zhi-ma-yun/"/>
+    <id>http://yywzt.github.io/2018/06/22/eclipse-xiang-mu-shang-chuan-zhi-ma-yun/</id>
+    <published>2018-06-21T16:27:16.000Z</published>
+    <updated>2018-08-24T01:27:51.258Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;登录码云：新建项目&quot;&gt;&lt;a href=&quot;#登录码云：新建项目&quot; class=&quot;headerlink&quot; title=&quot;登录码云：新建项目&quot;&gt;&lt;/a&gt;登录码云：新建项目&lt;/h4&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://yywzt.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Eclipse" scheme="http://yywzt.github.io/tags/Eclipse/"/>
+    
+  </entry>
+  
+</feed>

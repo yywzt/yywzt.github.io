@@ -1,0 +1,1081 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Docker, yywzt">
+    <meta name="description" content="安装Docker安装linux虚拟机​    1）、VMWare、VirtualBox（安装）；
+​    2）、导入虚拟机文件centos7-atguigu.ova；
+​    3）、双击启动linux虚拟机;使用  root/ 1234">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Docker | yywzt</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">yywzt</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">yywzt</div>
+        <div class="logo-desc">
+            
+            当你仰望星空,你觉得你在看星星,其实,星星也在看你。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Docker
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.7.0/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-08-16
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        10 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><h4 id="安装linux虚拟机"><a href="#安装linux虚拟机" class="headerlink" title="安装linux虚拟机"></a>安装linux虚拟机</h4><p>​    1）、VMWare、VirtualBox（安装）；</p>
+<p>​    2）、导入虚拟机文件centos7-atguigu.ova；</p>
+<p>​    3）、双击启动linux虚拟机;使用  root/ 123456登陆</p>
+<p>​    4）、使用客户端连接linux服务器进行命令操作；</p>
+<p>​    5）、设置虚拟机网络；</p>
+<p>​        桥接网络===选好网卡====接入网线；</p>
+<p>​    6）、设置好网络以后使用命令重启虚拟机的网络</p>
+<pre class="line-numbers language-shell"><code class="language-shell">service network restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>​    7）、查看linux的ip地址</p>
+<pre class="line-numbers language-shell"><code class="language-shell">ip addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>​    8）、使用客户端连接linux；</p>
+<h4 id="在linux虚拟机上安装docker"><a href="#在linux虚拟机上安装docker" class="headerlink" title="在linux虚拟机上安装docker"></a>在linux虚拟机上安装docker</h4><p>步骤：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">1、检查内核版本，必须是3.10及以上
+uname -r
+2、安装docker
+yum install docker
+3、输入y确认安装
+4、启动docker
+[root@localhost ~]# systemctl start docker
+[root@localhost ~]# docker -v
+Docker version 1.12.6, build 3e8e77d/1.12.6
+5、开机启动docker
+[root@localhost ~]# systemctl enable docker
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+6、停止docker
+systemctl stop docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Docker常用命令-amp-操作"><a href="#Docker常用命令-amp-操作" class="headerlink" title="Docker常用命令&amp;操作"></a>Docker常用命令&amp;操作</h2><h3 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>检索</td>
+<td>docker  search 关键字  eg：docker  search redis</td>
+<td>我们经常去docker  hub上检索镜像的详细信息，如镜像的TAG。</td>
+</tr>
+<tr>
+<td>拉取</td>
+<td>docker pull 镜像名:tag</td>
+<td>:tag是可选的，tag表示标签，多为软件的版本，默认是latest</td>
+</tr>
+<tr>
+<td>列表</td>
+<td>docker images</td>
+<td>查看所有本地镜像</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>docker rmi image-id</td>
+<td>删除指定的本地镜像</td>
+</tr>
+</tbody></table>
+<p><a href="https://hub.docker.com/" target="_blank" rel="noopener">https://hub.docker.com/</a></p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre class="line-numbers language-shell"><code class="language-shell">docker ps -a：列出所有容器
+docker ps：列出所有正在运行的容器
+docker image ls：列出所有的镜像
+docker stop <name>：暂停容器
+docker rm -f <name>：删除容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></name></name></code></pre>
+<h3 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h3><p>软件镜像（QQ安装程序）—-运行镜像—-产生一个容器（正在运行的软件，运行的QQ）；</p>
+<p>步骤：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">1、搜索镜像
+[root@localhost ~]# docker search tomcat
+2、拉取镜像
+[root@localhost ~]# docker pull tomcat
+2.1、中国官方镜像加速
+docker pull registry.docker-cn.com/library/
+3、根据镜像启动容器
+docker run --name mytomcat -d tomcat:latest
+4、docker ps  
+查看运行中的容器
+5、 停止运行中的容器
+docker stop  容器的id
+6、查看所有的容器
+docker ps -a
+7、启动容器
+docker start 容器id
+8、删除一个容器
+ docker rm 容器id
+9、启动一个做了端口映射的tomcat
+[root@localhost ~]# docker run -d -p 8888:8080 tomcat
+-d：后台运行
+-p: 将主机的端口映射到容器的一个端口    主机端口:容器内部的端口
+
+10、为了演示简单关闭了linux的防火墙
+service firewalld status ；查看防火墙状态
+service firewalld stop：关闭防火墙
+11、查看容器的日志
+docker logs container-name/container-id
+12、查看容器的ip
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+13、查看对于容器的id、镜像id，并删除
+docker rm -f $(docker ps -a | grep 'spring_data_jpa' | awk '{print $1}')
+docker rmi $(docker images | grep 'spring_data_jpa' | awk '{print $3}')
+更多命令参看
+https://docs.docker.com/engine/reference/commandline/docker/
+可以参考每一个镜像的文档<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="docker网络"><a href="#docker网络" class="headerlink" title="docker网络"></a>docker网络</h3><pre class="line-numbers language-shell"><code class="language-shell">docker network ls 查看网络信息
+docker network create --subnet=网段 网络名称
+docker network rm 网络名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="Docker安装Mysql"><a href="#Docker安装Mysql" class="headerlink" title="Docker安装Mysql"></a>Docker安装Mysql</h3><p>下载msyql</p>
+<pre class="line-numbers language-shell"><code class="language-shell">[root@bogon ~]# docker pull registry.docker-cn.com/library/mysql:5.7
+[root@bogon ~]# docker images
+REPOSITORY                            TAG        IMAGE ID        CREATED      SIZE
+registry.docker-cn.com/library/mysql   5.7       75576f90a779    13 days ago  372 MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改名称tag</p>
+<pre class="line-numbers language-shell"><code class="language-shell">[root@bogon ~]# docker tag registry.docker-cn.com/library/mysql:5.7 mysql
+[root@bogon ~]# docker images
+REPOSITORY                            TAG        IMAGE ID        CREATED      SIZE
+mysql                                 latest     75576f90a779    13 days ago  372 MB
+registry.docker-cn.com/library/mysql   5.7       75576f90a779    13 days ago  372 MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行一个mysql容器（自动启动）</p>
+<pre class="line-numbers language-shell"><code class="language-shell">[root@localhost ~]# docker run --restart=always --name mysqlServer -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7 
+ba54a57a48af164a5c6abdd05429196d427fc602608bd94c8badb2e9bcc73b42
+[root@localhost ~]# docker ps    
+CONTAINER ID   IMAGE       COMMAND                  CREATED            STATUS       
+ PORTS                                NAMES
+ba54a57a48af   mysql:5.7   "docker-entrypoint..."   10 seconds ago     Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   mysqlServer
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>挂载外部配置和数据安装</p>
+<p>创建目录和配置文件my.cnf</p>
+<pre><code>mkdir /docker
+mkdir /docker/mysql
+mkdir /docker/mysql/conf
+mkdir /docker/mysql/data
+创建my.cnf配置文件
+touch /docker/mysql/conf/my.cnf
+my.cnf添加如下内容：
+[mysqld]
+user=mysql
+character-set-server=utf8
+default_authentication_plugin=mysql_native_password
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8</code></pre><p>创建容器，并后台启动</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 3306:3306 --privileged=true -v /docker/mysql/conf/my.cnf:/etc/my.cnf -v /docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name mysqlServer -d mysql:5.7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>参数说明：</p>
+<p>–restart=always：自动重启</p>
+<p>–privileged=true：容器内的root拥有真正root权限，否则容器内root只是外部普通用户权限</p>
+<p>-v /docker/mysql/conf/my.cnf:/etc/my.cnf：映射配置文件</p>
+<p>-v /docker/mysql/data:/var/lib/mysql：映射数据目录</p>
+</blockquote>
+<p>连接Mysql</p>
+<pre class="line-numbers language-shell"><code class="language-shell">[root@bogon ~]# docker exec -it 54d1fe9e4f37 /bin/bash
+root@54d1fe9e4f37:/# mysql -h 127.0.0.1 -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.23 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show database;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+mysql><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Docker安装Jenkins"><a href="#Docker安装Jenkins" class="headerlink" title="Docker安装Jenkins"></a>Docker安装Jenkins</h3><pre class="line-numbers language-shell"><code class="language-shell">[root@VM_0_9_centos ~]# docker run --restart=always --name jenkins --user=root -p 8080:8080 -v /yw/data/jenkins_home:/var/jenkins_home -v /yw/maven/apache-maven-3.5.4:/usr/local/maven -v /yw/java/jdk1.8.0_11:/usr/local/jdk -d jenkins/jenkins:lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>-v后面就是我将宿主机的安装路劲映射到镜像中，这样在jenkins中就可以配置了。 </p>
+<h4 id="jenkins配置"><a href="#jenkins配置" class="headerlink" title="jenkins配置"></a>jenkins配置</h4><h5 id="初始化jenkins及安装插件"><a href="#初始化jenkins及安装插件" class="headerlink" title="初始化jenkins及安装插件"></a>初始化jenkins及安装插件</h5><p>启动完jenkins后通过浏览器输入地址http://部署jenkins主机IP:端口</p>
+<p>根据提示从输入administrator password 或者可以通过启动日志</p>
+<pre><code>docker logs devops-jenkins
+复制代码</code></pre><p>查看这个password 如：</p>
+<h5 id="jenkins自动部署jar至docker的shell脚本"><a href="#jenkins自动部署jar至docker的shell脚本" class="headerlink" title="jenkins自动部署jar至docker的shell脚本"></a>jenkins自动部署jar至docker的shell脚本</h5><pre class="line-numbers language-shell"><code class="language-shell">echo "run springdatajpa start"
+docker stop springdatajpa
+docker rm -f springdatajpa
+
+docker run --restart=always -p 18080:18080 -v /yw/jar/SpringDataJpa-0.0.1-SNAPSHOT.jar:/usr/local/SpringDataJpa-0.0.1-SNAPSHOT.jar --name springdatajpa frolvlad/alpine-oraclejdk8:slim java -jar -Dspring.profiles.active=prod /usr/local/SpringDataJpa-0.0.1-SNAPSHOT.jar
+
+echo "run springdatajpa end"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Docker部署RabbitMq集群"><a href="#Docker部署RabbitMq集群" class="headerlink" title="Docker部署RabbitMq集群"></a>Docker部署RabbitMq集群</h3><h4 id="安装RabbitMq"><a href="#安装RabbitMq" class="headerlink" title="安装RabbitMq"></a>安装RabbitMq</h4><pre class="line-numbers language-shell"><code class="language-shell">docker pull registry.docker-cn.com/library/rabbitmq:3.6.15-management
+
+docker images
+REPOSITORY                                TAG                IMAGE ID      CREATED       SIZE
+registry.docker-cn.com/library/rabbitmq   3.6.15-management  f2e38e79371c  4 months ago  149 MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="启动RabbitMq"><a href="#启动RabbitMq" class="headerlink" title="启动RabbitMq"></a>启动RabbitMq</h4><pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -d --hostname rabbitmq1 --name myrabbitmq1 -p 15672:15672 -p 5672:5672 rabbitmq:3.6.15-management<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="配置RabbitMq集群"><a href="#配置RabbitMq集群" class="headerlink" title="配置RabbitMq集群"></a>配置RabbitMq集群</h4><pre class="line-numbers language-shell"><code class="language-shell"># 启动RabbitMq容器
+docker run --restart=always -d --hostname rabbitmq1 --name myrabbitmq1 -p 15672:15672 -p 5672:5672 -e RABBITMQ_ERLANG_COOKIE='rabbitcookie' rabbitmq:3.6.15-management
+
+docker run --restart=always -d --hostname rabbitmq2 --name myrabbitmq2 -p 5673:5672 --link myrabbitmq1:rabbitmq1 -e RABBITMQ_ERLANG_COOKIE='rabbitcookie' rabbitmq:3.6.15-management
+
+docker run --restart=always -d --hostname rabbitmq3 --name myrabbitmq3 -p 5674:5672 --link myrabbitmq1:rabbitmq1 --link myrabbitmq2:rabbitmq2  -e RABBITMQ_ERLANG_COOKIE='rabbitcookie' rabbitmq:3.6.15-management<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell"># 配置集群
+docker exec -it myrabbitmq1 bash
+rabbitmqctl stop_app
+rabbitmqctl reset
+rabbitmqctl start_app
+# 集群信息
+root@rabbitmq1:/# rabbitmqctl cluster_status
+Cluster status of node rabbit@rabbitmq1
+[{nodes,[{disc,[rabbit@rabbitmq1]}]},
+ {running_nodes,[rabbit@rabbitmq1]},
+ {cluster_name,<<"rabbit@rabbitmq1">>},
+ {partitions,[]},
+ {alarms,[{rabbit@rabbitmq1,[]}]}]
+# 退出rabbitmq1
+root@rabbitmq1:/# exit
+
+ # 将myrabbitmq2加入rabbitmq1的集群中
+docker exec -it myrabbitmq2 bash
+rabbitmqctl stop_app
+rabbitmqctl reset
+rabbitmqctl join_cluster rabbit@rabbitmq1
+rabbitmqctl start_app
+# 集群信息
+root@rabbitmq2:/# rabbitmqctl cluster_status
+Cluster status of node rabbit@rabbitmq2
+[{nodes,[{disc,[rabbit@rabbitmq1,rabbit@rabbitmq2]}]},
+ {running_nodes,[rabbit@rabbitmq1,rabbit@rabbitmq2]},
+ {cluster_name,<<"rabbit@rabbitmq1">>},
+ {partitions,[]},
+ {alarms,[{rabbit@rabbitmq1,[]},{rabbit@rabbitmq2,[]}]}]
+ # 退出rabbitmq2
+root@rabbitmq2:/# exit
+
+# 将myrabbitmq3加入rabbitmq1的集群中
+docker exec -it myrabbitmq3 bash
+rabbitmqctl stop_app
+rabbitmqctl reset
+rabbitmqctl join_cluster rabbit@rabbitmq1
+rabbitmqctl start_app
+# 集群信息
+root@rabbitmq3:/# rabbitmqctl cluster_status
+Cluster status of node rabbit@rabbitmq3
+[{nodes,[{disc,[rabbit@rabbitmq1,rabbit@rabbitmq2,rabbit@rabbitmq3]}]},
+ {running_nodes,[rabbit@rabbitmq1,rabbit@rabbitmq2,rabbit@rabbitmq3]},
+ {cluster_name,<<"rabbit@rabbitmq1">>},
+ {partitions,[]},
+ {alarms,[{rabbit@rabbitmq1,[]},{rabbit@rabbitmq2,[]},{rabbit@rabbitmq3,[]}]}]
+ # 退出rabbitmq3
+root@rabbitmq3:/# exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></"rabbit@rabbitmq1"></"rabbit@rabbitmq1"></"rabbit@rabbitmq1"></code></pre>
+<h3 id="docker部署Eureka集群"><a href="#docker部署Eureka集群" class="headerlink" title="docker部署Eureka集群"></a>docker部署Eureka集群</h3><pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 18760:18760 -v /yw/jar/eureka-server/eureka-server-0.0.1-SNAPSHOT.jar:/usr/local/eureka-server-0.0.1-SNAPSHOT.jar --name EurekaServerPeer1 frolvlad/alpine-oraclejdk8:slim java -jar -Dspring.profiles.active=peer1 /usr/local/eureka-server-0.0.1-SNAPSHOT.jar
+
+docker run --restart=always -p 18761:18761 -v /yw/jar/eureka-server/eureka-server-0.0.1-SNAPSHOT.jar:/usr/local/eureka-server-0.0.1-SNAPSHOT.jar --name EurekaServerPeer2 frolvlad/alpine-oraclejdk8:slim java -jar -Dspring.profiles.active=peer2 /usr/local/eureka-server-0.0.1-SNAPSHOT.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="docker安装mongodb"><a href="#docker安装mongodb" class="headerlink" title="docker安装mongodb"></a>docker安装mongodb</h3><pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always --name mongodb -p 27017:27017 -v /yw/mongodb/data:/data/db -d mongo:latest --auth<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="docker安装redis"><a href="#docker安装redis" class="headerlink" title="docker安装redis"></a>docker安装redis</h3><pre class="line-numbers language-shell"><code class="language-shell">docker run --name redis-server  -p 6379:6379 -v /yw/redis/data:/data -d redis:3.2 redis-server --requirepass "root"  --appendonly yes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="docker安装kafka"><a href="#docker安装kafka" class="headerlink" title="docker安装kafka"></a>docker安装kafka</h3><pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=139.199.179.164:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://139.199.179.164:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -e LANG="en_US.UTF-8" -v /docker/kafka/kfk_log:/kafka -v /var/run/docker.sock:/var/run/docker.sock  -t wurstmeister/kafka <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="docker安装kafka-manager"><a href="#docker安装kafka-manager" class="headerlink" title="docker安装kafka-manager"></a>docker安装kafka-manager</h3><pre class="line-numbers language-shell"><code class="language-shell">docker run -itd --restart=always --name=kafka-manager -p 9000:9000 -e ZK_HOSTS="139.199.179.164:2181" sheepkiller/kafka-manager<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="docker部署jar"><a href="#docker部署jar" class="headerlink" title="docker部署jar"></a>docker部署jar</h3><h4 id="镜像方式"><a href="#镜像方式" class="headerlink" title="镜像方式"></a>镜像方式</h4><p>进入项目路径  </p>
+<pre class="line-numbers language-shell"><code class="language-shell">mvn package<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>构建镜像</p>
+<pre class="line-numbers language-shell"><code class="language-shell">mvn package docker:build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>启动项目</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 18080:18080 -t spring_data_jpa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="直接docker运行jar方式"><a href="#直接docker运行jar方式" class="headerlink" title="直接docker运行jar方式"></a>直接docker运行jar方式</h4><pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 18080:18080 -v /yw/jar/SpringDataJpa-0.0.1-SNAPSHOT.jar:/usr/local/SpringDataJpa-0.0.1-SNAPSHOT.jar --name springdatajpa frolvlad/alpine-oraclejdk8:slim java -jar -Dspring.profiles.active=prod /usr/local/SpringDataJpa-0.0.1-SNAPSHOT.jar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《Docker》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/08/16/docker/" property="cc:attributionName" rel="cc:attributionURL">
+                yywzt
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/05/30/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            yywzt
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/08/10/rabbitmq/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="RabbitMQ消息队列">
+                        
+                        <span class="card-title">RabbitMQ消息队列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简介RabbitMQ 即一个消息队列，主要是用来实现应用程序的异步和解耦，同时也能起到消息缓冲，消息分发的作用。 
+RabbitMQ是实现AMQP（高级消息队列协议）的消息中间件的一种，最初起源于金融系统，用于在分布式系统中存储转发消息，在
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MQ/" class="post-category" target="_blank">
+                                    MQ
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RabbitMQ/" target="_blank">
+                        <span class="chip bg-color">RabbitMQ</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: yywzt<br />'
+            + '作者: yywzt<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcss.com/tocbot/4.7.0/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">27.8k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/yywzt/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ywyw2424@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2507967396" class="tooltipped" data-tooltip="QQ联系我: 2507967396" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script>
+<script src="https://cdn.bootcss.com/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+<script src="https://cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
