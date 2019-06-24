@@ -435,7 +435,7 @@ RabbitMQ是实现AMQP（高级消息队列协议）的消息中间件的一种�
 <p>AMQP，即Advanced Message Queuing Protocol，高级消息队列协议，是应用层协议的一个开放标准，为面向消息的中间件设计。消息中间件主要用于组件之间的解耦，消息的发送者无需知道消息使用者的存在，反之亦然。AMQP的主要特征是面向消息、队列、路由（包括点对点和发布/订阅）、可靠性、安全。  </p>
 <p>RabbitMQ是一个开源的AMQP实现，服务器端用Erlang语言编写，支持多种客户端，如：Python、Ruby、.NET、Java、JMS、C、PHP、ActionScript、XMPP、STOMP等，支持AJAX。用于在分布式系统中存储转发消息，在易用性、扩展性、高可用性等方面表现不俗。</p>
 <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><p>通常我们谈到队列服务, 会有三个概念： 发消息者、队列、收消息者，RabbitMQ 在这个基本概念之上, 多做了一层抽象, 在发消息者和 队列之间, 加入了交换器 (Exchange). 这样发消息者和队列就没有直接联系, 转而变成发消息者把消息给交换器, 交换器根据调度策略再把消息再给队列。</p>
-<p><img src="https://yywresource.oss-cn-beijing.aliyuncs.com/blog/RabbitMQ/5edc1c2f3fadca9fd438f495034a81be.png?Expires=1559317099&OSSAccessKeyId=TMP.AgGiFH4YjwQggE23pKnAHzpyxVFDcitOpEkN_vpjm-xO19lHgXK1ZC6Md1X_ADAtAhQ7RpvL-SS9IvJic7BIm0_gb8kVRAIVALTHqcb3IZuXUZrdLVNmW92aSJPl&Signature=sQ1vCOyERvKcetdsKPz%2FctJoQj0%3D" alt="img"></p>
+<p><img src="https://yywresource.oss-cn-beijing.aliyuncs.com/blog/RabbitMQ/5edc1c2f3fadca9fd438f495034a81be.png" alt="img"></p>
 <ul>
 <li>左侧 P 代表 生产者，也就是往 RabbitMQ 发消息的程序。</li>
 <li>中间即是 RabbitMQ，<em>其中包括了 交换机 和 队列。</em></li>
@@ -455,7 +455,7 @@ RabbitMQ是实现AMQP（高级消息队列协议）的消息中间件的一种�
 <li>Fanout：转发消息到所有绑定队列</li>
 </ul>
 <p><strong>Direct Exchange</strong><br>Direct  Exchange是RabbitMQ默认的交换机模式，也是最简单的模式，根据key全文匹配去寻找队列。</p>
-<p><img src="https://yywresource.oss-cn-beijing.aliyuncs.com/blog/RabbitMQ/988fe8f789df3fb4540f88a6fc094eb3.png?Expires=1559317111&OSSAccessKeyId=TMP.AgGiFH4YjwQggE23pKnAHzpyxVFDcitOpEkN_vpjm-xO19lHgXK1ZC6Md1X_ADAtAhQ7RpvL-SS9IvJic7BIm0_gb8kVRAIVALTHqcb3IZuXUZrdLVNmW92aSJPl&Signature=mW2AZAz1qQHnGH%2Fv%2FJ1w5veYh6Q%3D" alt="img"></p>
+<p><img src="https://yywresource.oss-cn-beijing.aliyuncs.com/blog/RabbitMQ/988fe8f789df3fb4540f88a6fc094eb3.png" alt="img"></p>
 <p>第一个 X - Q1 就有一个 binding key，名字为 orange； X - Q2 就有 2 个 binding key，名字为 black 和 green。<em>当消息中的 路由键 和 这个 binding key 对应上的时候，那么就知道了该消息去到哪一个队列中。</em></p>
 <p>Ps：为什么 X 到 Q2 要有 black，green，2个 binding key呢，一个不就行了吗？ - 这个主要是因为可能又有 Q3，而Q3只接受 black 的信息，而Q2不仅接受black 的信息，还接受 green 的信息。</p>
 <p><strong>Topic Exchange</strong>  </p>
@@ -1299,7 +1299,7 @@ RabbitMQ是实现AMQP（高级消息队列协议）的消息中间件的一种�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">27.8k</span>
+                <span class="white-color">27.6k</span>
             
 
             
