@@ -395,7 +395,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2k
+                        2.1k
                     </div>
                     
 
@@ -556,7 +556,9 @@ default_authentication_plugin=mysql_native_password
 default-character-set=utf8
 [mysql]
 default-character-set=utf8</code></pre><p>创建容器，并后台启动</p>
-<pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 3306:3306 --privileged=true -v /docker/mysql/conf/my.cnf:/etc/my.cnf -v /docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name mysqlServer -d mysql:5.7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">docker run --restart=always -p 3306:3306 --privileged=true -v /docker/mysql/conf/my.cnf:/etc/my.cnf -v /docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name mysqlServer -d mysql:5.7
+
+docker run --restart=always -p 3306:3306 --privileged=true -v /yw/docker/mysql8.0/conf/my.cnf:/etc/my.cnf -v /yw/docker/mysql8.0/data:/var/lib/mysql -v /etc/localtime:/etc/localtime -e MYSQL_ROOT_PASSWORD=Root123 --name mysql -d mysql:8.0 --default-authentication-plugin=mysql_native_password<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参数说明：</p>
 <p>–restart=always：自动重启</p>
@@ -986,7 +988,7 @@ RabbitMQ是实现AMQP（高级消息队列协议）的消息中间件的一种�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">27.6k</span>
+                <span class="white-color">27.7k</span>
             
 
             
